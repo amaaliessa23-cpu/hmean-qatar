@@ -20,6 +20,14 @@ function startOrder(tier) {
     window.location.href = '/order?tier=' + tier;
 }
 
+// ============ Product Details Navigation ============
+
+// Open the details page for a tier selected from an index card.
+function openProductDetails(tier) {
+    if (!tier) return;
+    window.location.href = '/product?tier=' + encodeURIComponent(tier);
+}
+
 // ============ Error Handling ============
 
 function showError(message) {
@@ -119,6 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     console.log('🚀 Fazaa App Initialized!');
+});
+
+// Card click opens the product details page. The "order now" button and the
+// expandable details/summary keep their own behaviour.
+document.addEventListener('click', (e) => {
+    const card = e.target.closest('.cards-grid .card');
+    if (!card) return;
+    if (e.target.closest('.btn-order')) return;
+    if (e.target.closest('.card-details, summary')) return;
+
+    openProductDetails(card.dataset.tier);
 });
 
 // Close modal on outside click

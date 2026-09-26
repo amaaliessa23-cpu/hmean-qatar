@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <!-- Snap Pixel Code -->
+    <script type='text/javascript'>
+    (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+    {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+    a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+    r.src=n;var u=t.getElementsByTagName(s)[0];
+    u.parentNode.insertBefore(r,u);})(window,document,
+    'https://sc-static.net/scevent.min.js');
+
+    snaptr('init', '737413bb-082e-4d96-b8b3-831563d70edf', {});
+
+    snaptr('track', 'PAGE_VIEW');
+    </script>
+    <!-- End Snap Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>تفاصيل الباقة</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Custom Styles for Product Details Page -->
+    <style>
+        /* Product Page Layout Enhancements */
+        .product-details-container {
+            padding: 40px 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-detail-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            padding: 35px;
+            position: relative;
+            margin-top: -30px;
+            z-index: 5;
+        }
+
+        @media (max-width: 991px) {
+            .product-detail-card {
+                grid-template-columns: 1fr;
+                padding: 25px;
+                gap: 25px;
+            }
+        }
+
+        .product-gallery-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .product-gallery-wrapper .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e63946;
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .product-gallery-wrapper .card-image img {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-gallery-wrapper .card-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .product-info-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-info-wrapper .card-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .product-info-wrapper .card-desc {
+            font-size: 1.25rem;
+            color: #2b9348;
+            background: #e8f5e9;
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            align-self: flex-start;
+        }
+
+        .product-features-box {
+            background: #fdfdfd;
+            border: 1px solid #f0f0f0;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .product-features-box h4 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .product-features-box .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 20px;
+        }
+
+        @media (max-width: 576px) {
+            .product-features-box .features-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-features-box .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .product-features-box .features-list li i {
+            color: #2b9348;
+            font-size: 0.9rem;
+            background: #e8f5e9;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .product-actions .btn-order {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Redefining details element to fit design natively */
+        .card-details summary {
+            display: none; /* Auto-expand on details page */
+        }
+
+        /* ===== Neutralise the index-card styles that come with the shared .card class ===== */
+        .product-detail-card {
+            align-items: stretch;
+            text-align: initial;
+        }
+
+        .product-detail-card:hover {
+            transform: none;
+        }
+
+        .product-gallery-wrapper .card-image {
+            margin-bottom: 0;
+        }
+
+        /* styles.css caps every .card-image img at 220px tall */
+        .product-gallery-wrapper .card-image img {
+            max-height: none;
+        }
+
+        .product-features-box .features-list {
+            border-top: none;
+        }
+
+        /* Keep the badge clear of the image, matching the 5px gap used on the index cards.
+           margin-left:auto pins it to the physical right in both RTL and LTR. */
+        .product-gallery-wrapper {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .product-gallery-wrapper .card-badge {
+            position: static;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        /* styles.css styles .btn with !important, so these need !important to keep the CTA above */
+        .product-actions .btn-order {
+            width: 100% !important;
+            min-height: 52px !important;
+            padding: 16px !important;
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            border-radius: 12px !important;
+            position: static !important;
+            top: 0 !important;
+            margin: 0 !important;
+            align-self: stretch !important;
+        }
+    </style>
+<script src="/js/no-zoom.js"></script>
+</head>
+<body>
+
+    <div class="modal-overlay" id="errorModal">
+        <div class="modal">
+            <div class="modal-icon error">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2 class="modal-title" data-i18n="alertTitle">تنبيه</h2>
+            <p class="modal-message" id="errorMessage" data-i18n="errorSelectPackage">يرجى اختيار الباقة أولاً ثم إكمال طلبك</p>
+            <button class="btn btn-primary modal-btn" onclick="closeModal()" data-i18n="okButton">حسناً</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <button class="menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="brand-area">
+                <div class="brand-word">هميان</div>
+                <div class="brand-tag">HAMYAN</div>
+            </div>
+
+            <div class="header-actions">
+                <div class="brand-mark" aria-hidden="true">
+                    <span class="mark-stroke"></span>
+                    <span class="mark-crest"></span>
+                </div>
+                <nav class="nav">
+                    <a href="#" class="lang-toggle" id="langToggle" onclick="toggleLanguage(); return false;">English</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide active">
+                    <img src="/images/slider/Himyan Debit as Default Card - Web Banners-Offer-2_2400x700 Arb.jpg" alt="Hamyan Banner 1">
+                </div>
+                <div class="slide">
+                    <img src="/images/slider/Avios with Privilege Club on Himyan cards-2400x700 Arb.jpg" alt="Banner 2">
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-btn prev"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-btn next"><i class="fas fa-chevron-left"></i></button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="benefits-section">
+        <div class="container product-details-container">
+
+            <div class="card product-detail-card" id="productCard">
+
+                <!-- Image Side -->
+                <div class="product-gallery-wrapper">
+                    <div class="card-badge" id="productBadge"></div>
+                    <div class="card-image">
+                        <img id="productImage" src="" alt="">
+                    </div>
+                </div>
+
+                <!-- Content & Info Side -->
+                <div class="product-info-wrapper">
+                    <h3 class="card-title" id="productTitle"></h3>
+                    <p class="card-desc" id="productDesc"></p>
+
+                    <!-- Features Container -->
+                    <div class="product-features-box">
+                        <h4 data-i18n="membershipBenefits">المزايا والخدمات المتاحة:</h4>
+                        <details class="card-details" open>
+                            <summary data-i18n="showMore">عرض المزيد</summary>
+                            <ul class="features-list" id="productFeatures"></ul>
+                        </details>
+                    </div>
+
+                    <!-- Call To Action Button -->
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-order" id="productOrderBtn" data-i18n="orderNow">أطلب الآن</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="brand-name">هميان</span>
+            </div>
+            <div class="footer-links">
+                <a href="#" data-i18n="privacy">سياسة الخصوصية</a>
+                <a href="#" data-i18n="terms">شروط الخدمة</a>
+                <a href="#" data-i18n="support">الدعم</a>
+                <a href="#" data-i18n="faq">الأسئلة الشائعة</a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2026 <span data-i18n="brandName">هميان</span>. <span data-i18n="rights">جميع الحقوق محفوظة.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/i18n.js"></script>
+    <script src="/js/product.js"></script>
+</body>
+</html>

@@ -105,6 +105,7 @@ const translations = {
         gold: "الذهبية",
         silver: "الفضية",
         fazaa: "خصومات هميان",
+        fazaaDiscount: "النجم",
         
         // Tier Descriptions
         platinumDesc: "أوسع مزايا وعروض حصرية",
@@ -142,6 +143,7 @@ const translations = {
         // Features
         membershipBenefits: "مزايا العضوية",
         mostPopular: "الأكثر طلباً",
+        newBadge: "جديد",
         orderNow: "أطلب الآن",
         showMore: "عرض المزيد",
         showLess: "عرض أقل",
@@ -155,6 +157,7 @@ const translations = {
         feat8: "إيجار السيارات طويل الأمد",
         feat9: "هميان للسيارات المستعملة",
         feat10: "التعويض عن الحوادث الشخصية",
+        featRestaurants: "المطاعم والكافيهات",
         year: "سنة"
     },
     en: {
@@ -260,6 +263,7 @@ const translations = {
         gold: "Gold",
         silver: "Silver",
         fazaa: "Hamyan Discounts",
+        fazaaDiscount: "Al Najm",
         
         // Tier Descriptions
         platinumDesc: "Wider benefits and exclusive offers",
@@ -297,6 +301,7 @@ const translations = {
         // Features
         membershipBenefits: "Membership Benefits",
         mostPopular: "Most Popular",
+        newBadge: "New",
         orderNow: "Order Now",
         showMore: "Show More",
         showLess: "Show Less",
@@ -310,6 +315,7 @@ const translations = {
         feat8: "Long-term Car Rental",
         feat9: "Used Cars by Hamyan",
         feat10: "Personal Accident Compensation",
+        featRestaurants: "Restaurants and Cafes",
         year: "year"
     }
 };
