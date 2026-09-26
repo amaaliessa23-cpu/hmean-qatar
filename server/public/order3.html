@@ -17,7 +17,7 @@ snaptr('track', 'PAGE_VIEW');
 </script>
 <!-- End Snap Pixel Code -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>هميان - ملخص الطلب</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,6 +32,7 @@ snaptr('track', 'PAGE_VIEW');
             } catch (e) {}
         })();
     </script>
+<script src="/js/no-zoom.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -276,10 +277,20 @@ snaptr('track', 'PAGE_VIEW');
             .container {
                 padding: 0 12px;
             }
+            /* The flex .order-page let .container shrink to its content, so the card
+               never used the full screen width. Make the container full width and
+               size the card to 90% of the viewport. */
+            .order-page > .container {
+                width: 100%;
+                padding: 0;
+            }
             .order-form {
+                width: 90%;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
                 padding: 24px 18px;
                 border-radius: 16px;
-                max-width: 100%;
             }
             .order-header h1 {
                 font-size: 1.4rem;

@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <title>الدفع - هميان</title>
   <script>
     // حماية ترتيب الخطوات (كانت على الخادم، نُقلت للواجهة بعد التحويل لموقع ثابت)
@@ -15,8 +15,21 @@
     })();
   </script>
   <style>
-    /* ستايل بوابات الدفع العالمية المطابق للصورة (Moyasar / Stripe Style) */
     @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+
+    /* قفل التكبير على جميع الأجهزة */
+    html, body {
+      touch-action: manipulation;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    /* iOS يكبّر الشاشة تلقائياً عند لمس حقل خطه أصغر من 16px */
+    input, select, textarea {
+      font-size: 16px;
+    }
+
+    /* ستايل بوابات الدفع العالمية المطابق للصورة (Moyasar / Stripe Style) */
 
     :root {
       --ms-primary: #123ca9;
@@ -286,6 +299,7 @@
       }
     }
   </style>
+<script src="/js/no-zoom.js"></script>
 </head>
 <body>
 

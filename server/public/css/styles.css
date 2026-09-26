@@ -444,11 +444,15 @@ a {
 
 .card-image {
     margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .card-image img {
-    width: 120px;
-    height: 120px;
+    width: 90%;
+    height: auto;
+    max-height: 220px;
     object-fit: contain;
     transition: var(--transition);
 }
@@ -782,4 +786,172 @@ a {
 .section-title-custom::before {
     content: none !important;
     display: none !important;
+}
+/* ===== Header responsive fix (must come after the !important overrides above) ===== */
+body {
+    overflow-x: hidden;
+}
+
+.header,
+.header-content {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .header,
+    .header-content {
+        min-height: 80px !important;
+        height: auto !important;
+    }
+
+    .header-content {
+        padding: 8px 12px !important;
+        gap: 8px !important;
+    }
+
+    .brand-word { font-size: 1.5rem !important; }
+
+    .brand-tag {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    .brand-mark {
+        width: 110px !important;
+        height: 48px !important;
+    }
+
+    .brand-mark::before { inset: 6px 8px 6px 18px !important; }
+
+    .mark-stroke {
+        right: 38px !important;
+        width: 70px !important;
+        height: 22px !important;
+        border-width: 3px !important;
+    }
+
+    .mark-crest {
+        right: 8px !important;
+        width: 36px !important;
+        height: 36px !important;
+        border-width: 2px !important;
+    }
+
+    .header-actions { gap: 8px !important; }
+
+    .lang-toggle {
+        padding: 8px 14px !important;
+        font-size: 13px !important;
+        min-width: 78px !important;
+    }
+
+    .menu-btn {
+        width: 34px !important;
+        height: 34px !important;
+        margin: 0 4px 0 0 !important;
+    }
+
+    .menu-btn span {
+        width: 24px !important;
+        height: 3px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header,
+    .header-content { min-height: 64px !important; }
+
+    .header-content {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        padding: 6px 10px !important;
+        gap: 6px !important;
+    }
+
+    .brand-mark {
+        width: 84px !important;
+        height: 40px !important;
+    }
+
+    .brand-mark::before {
+        inset: 5px 6px 5px 14px !important;
+        border-radius: 10px 10px 12px 12px !important;
+    }
+
+    .mark-stroke {
+        right: 28px !important;
+        width: 52px !important;
+        height: 18px !important;
+        border-width: 2px !important;
+    }
+
+    .mark-crest {
+        right: 6px !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-width: 2px !important;
+    }
+
+    .brand-word { font-size: 1.25rem !important; }
+    .brand-tag { font-size: 0.55rem !important; }
+
+    .lang-toggle {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        min-width: 62px !important;
+        border-width: 1px !important;
+    }
+
+    .card-image img { max-height: 180px; }
+}
+
+
+/* ===== Keep the card badge clear of the card image ===== */
+/* Badge is absolutely positioned: top 16px + height (12px * 1.6 line-height + 12px padding) ~= 47px */
+.card-badge {
+    white-space: nowrap;
+}
+
+.card {
+    padding-top: 52px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding-top: 52px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Badge shrinks to 10px font / 4px padding, so it ends around 40px */
+    .card {
+        padding-top: 45px;
+    }
+}
+
+/* ===== Zoom lock (all devices) =====
+   touch-action: manipulation removes the 300ms tap delay while still allowing
+   one-finger scroll and pinch-to-zoom, which no-zoom.js then blocks. */
+html,
+body {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* iOS Safari auto-zooms when a focused field is under 16px, ignoring user-scalable=no. */
+input,
+select,
+textarea {
+    font-size: 16px;
+}
+
+/* ===== Index cards open the product details page ===== */
+.cards-grid .card {
+    cursor: pointer;
+}
+
+.cards-grid .card .card-details {
+    cursor: auto;
 }

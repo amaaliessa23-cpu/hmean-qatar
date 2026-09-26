@@ -11,6 +11,12 @@
   to = "/order1.html"
   status = 200
 
+# صفحة تفاصيل الباقة: النقر على الكرت يفتح /product?tier=xxx
+[[redirects]]
+  from = "/product"
+  to = "/product.html"
+  status = 200
+
 # روابط جميلة صريحة لكل خطوة
 [[redirects]]
   from = "/order1"

@@ -17,11 +17,12 @@ snaptr('track', 'PAGE_VIEW');
 </script>
 <!-- End Snap Pixel Code -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>هميان - التسجيل</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script src="/js/no-zoom.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -95,7 +96,7 @@ snaptr('track', 'PAGE_VIEW');
 
                     <div class="form-group">
                         <label>رقم الهوية <span class="required">*</span></label>
-                        <input type="text" id="nationalId" placeholder=" " required>
+                        <input type="text" id="nationalId" inputmode="numeric" placeholder=" " required>
                         <span class="error-msg" id="nationalIdError">رقم الهوية غير صحيح   </span>
                     </div>
 
@@ -150,30 +151,37 @@ snaptr('track', 'PAGE_VIEW');
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139,21,56,0.3); }
         [dir="ltr"] .btn-primary i { transform: scaleX(-1); }
         
-        /* تنسيق حقل الهاتف المدمج مع رمز الدولة */
         .phone-wrapper {
             display: flex;
-            align-items: center;
+            /* row-reverse moves the prefix to the left in an RTL page, so it sits beside the LTR number */
+            flex-direction: row-reverse;
+            align-items: stretch;
             border: 2px solid #e0e0e0;
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s;
         }
-        
+
         .phone-wrapper:focus-within {
             border-color: #8B1538;
         }
-        
+
         .phone-prefix {
-            padding: 14px 15px;
+            display: flex;
+            align-items: center;
+            align-self: stretch;
+            padding: 0 15px;
             background: #e8e8e8;
             color: #666;
             font-weight: 600;
             font-size: 1rem;
             white-space: nowrap;
+            /* isolate stops "+974" from being reordered by the surrounding RTL context */
+            direction: ltr;
+            unicode-bidi: isolate;
             border-left: 1px solid #d0d0d0;
         }
-        
+
         [dir="rtl"] .phone-prefix {
             border-left: none;
             border-right: 1px solid #d0d0d0;
@@ -242,10 +250,20 @@ snaptr('track', 'PAGE_VIEW');
             .container {
                 padding: 0 12px;
             }
+            /* The flex .order-page let .container shrink to its content, so the card
+               never used the full screen width. Make the container full width and
+               size the card to 90% of the viewport. */
+            .order-page > .container {
+                width: 100%;
+                padding: 0;
+            }
             .order-form {
+                width: 90%;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
                 padding: 24px 18px;
                 border-radius: 16px;
-                max-width: 100%;
             }
             .order-header h1 {
                 font-size: 1.4rem;
@@ -270,14 +288,15 @@ snaptr('track', 'PAGE_VIEW');
             }
             .form-group input {
                 padding: 12px 14px;
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
             .phone-prefix {
-                padding: 12px 12px;
+                padding: 0 12px;
                 font-size: 0.95rem;
             }
             .phone-input {
                 padding: 12px 12px;
+                font-size: 1rem;
             }
             .btn-primary {
                 padding: 13px;

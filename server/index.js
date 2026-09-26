@@ -30,6 +30,11 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok' });
 });
 
+// Product details page - opened by clicking an index card
+app.get('/product', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'product.html'));
+});
+
 app.use('/api', routes);
 
 // Order Step 1 - Personal Info
